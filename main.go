@@ -28,7 +28,7 @@ func main() {
 	// Make sure your url environment variable is setup i.e.
 	// $ export NEO4JURL=http://neo4j:PASSWORD@localhost:7474/db/data
 	neo4jUrl = os.Getenv("NEO4JURL")
-	i.db, err = neoism.Connect("")
+	i.db, err = neoism.Connect(neo4jUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
