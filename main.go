@@ -12,7 +12,6 @@ import (
 	"github.com/StephanDollberg/go-json-rest-middleware-jwt"
 	"github.com/ant0ine/go-json-rest/rest"
 	"github.com/jmcvetta/neoism"
-	"github.com/sendgrid/sendgrid-go"
 )
 
 type Impl struct {
@@ -62,7 +61,6 @@ func main() {
 		rest.Post("/login", jwt_middleware.LoginHandler),
 		rest.Post("/register", i.RegisterUser),
 		rest.Get("/auth_test", handle_auth),
-		rest.Get("/email_test", sendgridExample),
 		rest.Get("/refresh_token", jwt_middleware.RefreshHandler),
 	)
 	if err != nil {
